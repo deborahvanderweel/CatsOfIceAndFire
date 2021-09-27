@@ -3,13 +3,13 @@ import Character from './Character';
 import React, { useEffect, useState } from 'react';
 
 const CharacterList = () => {
-    const [data, setData] = useState(0);
+    const [data, setData] = useState();
 
     useEffect(() => {
         fetch("https://anapioficeandfire.com/api/characters?page=1&pageSize=100")
             .then(res => res.json())
             .then(json => setData({ data: json }));
-    })
+    }, [])
 
     const characters = data;
     if (!characters || characters.length === 0) return <p>No characters, sorry</p>;
