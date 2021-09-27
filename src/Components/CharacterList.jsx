@@ -2,11 +2,13 @@
 import Character from './Character';
 import React, { useEffect, useState } from 'react';
 
-const CharacterList = () => {
+const CharacterList = (props) => {
     const [data, setData] = useState();
 
     useEffect(() => {
-        fetch("https://anapioficeandfire.com/api/characters?page=1&pageSize=100")
+        const value = Math.floor(Math.random() * 43);
+        console.log(value)
+        fetch(`https://anapioficeandfire.com/api/characters?page=${value}&pageSize=150`)
             .then(res => res.json())
             .then(json => setData({ data: json }));
     }, [])
