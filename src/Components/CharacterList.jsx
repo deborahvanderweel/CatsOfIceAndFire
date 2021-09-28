@@ -33,7 +33,7 @@ const CharacterList = () => {
             {/* when the api call failed, show error message */}
             { error && <div> {error} </div>}
             <div className="container ml-auto mr-auto flex flex-wrap justify-center">
-                <h1 className="text-5xl font-bold uppercase p-4">cats of ice and fire</h1>
+                <h1 className="text-5xl font-bold uppercase p-4">cats of <span className="hover:text-blue-400 transition duration-300">ice</span> and <span className="hover:text-red-500 transition duration-300">fire</span></h1>
             </div>
             { characters &&
                 <div className="container ml-auto mr-auto flex flex-wrap items-start">
